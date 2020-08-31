@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/bin/www",
     "dev": "nodemon src/bin/www",
-    "prd": "pm2 start src/bin/www",
+    "prd": "pm2 start test.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
