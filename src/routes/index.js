@@ -1,5 +1,5 @@
 const router = require('koa-router')()
-const { getAllUsers, getUserById } = require('../model/index')
+const { getAllUsers, getUserById } = require('../dao/index')
 
 router.get('/', async(ctx, next) => {
   ctx.body = {
@@ -10,7 +10,7 @@ router.get('/', async(ctx, next) => {
 })
 
 // 获取所有用户列表
-router.get('/users', async(ctx, next) => {
+router.get('users', async(ctx, next) => {
   await getAllUsers()
     .then((rows) => {
       ctx.body = {
@@ -29,7 +29,7 @@ router.get('/users', async(ctx, next) => {
 })
 
 // 获取单一用户
-router.get('/users/:id', async(ctx, next) => {
+router.get('users/:id', async(ctx, next) => {
   const id = ctx.params.id
   await getUserById([id])
     .then((rows) => {

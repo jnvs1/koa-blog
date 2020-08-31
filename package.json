@@ -4,9 +4,9 @@
   "description": "koa2 blog",
   "main": "index.js",
   "scripts": {
-    "start": "node bin/www",
-    "dev": "./node_modules/.bin/nodemon bin/www",
-    "prd": "pm2 start bin/www",
+    "start": "node src/bin/www",
+    "dev": "nodemon src/bin/www",
+    "prd": "pm2 start src/bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
