@@ -1,2 +1,7 @@
 2018-01-17 23:41:06: Listening on port 3302
 2018-01-17 23:42:24: Listening on port 3302
+2018-01-18 08:14:75: Listening on port 3302
+2018-01-18 08:21:28: Listening on port 3302
+2018-01-18 08:22:81:   <-- GET /user/1
+2018-01-18 08:22:88: GET /user/1 - 59ms
+2018-01-18 08:22:88:   --> GET /user/1 200 74ms 102b
