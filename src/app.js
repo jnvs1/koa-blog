@@ -5,6 +5,7 @@ const views = require('koa-views')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const cors = require('koa2-cors')
+// const io = require('koa-io')
 
 const router = require('./routes/router')
 
