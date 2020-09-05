@@ -1,10 +1,24 @@
 const app = require('../app')
 const debug = require('debug')('demo:server')
 const http = require('http')
+const IO = require('socket.io')
 
 var port = normalizePort(process.env.PORT || '3302')
 
 const server = http.createServer(app.callback())
+
+const io = IO(server)
+
+io.on('connection', (socket) => {
+  // console.log('connection success')
+  socket.on('add', (data) => {
+    console.log(data)
+  })
+})
+
+// io.on('add', (data) => {
+//   console.log(data)
+// })
 
 server.listen(port)
 server.on('error', onError)
