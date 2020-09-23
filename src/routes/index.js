@@ -1,10 +1,13 @@
 const router = require('koa-router')()
+const userController = require('../controller/user')
+
 const { getAllUsers, getUserById } = require('../dao/index')
 
 router.get('/', async(ctx, next) => {
   ctx.body = {
     data: {
-      "name": "defore"
+      'name': 'defore',
+      'greeting': 'Welcome to defore\'s api'
     }
   }
 })
@@ -49,6 +52,16 @@ router.get('users/:id', async(ctx, next) => {
         success: false
       }
     })
+})
+
+// 登录
+router.post('login', async (ctx, next) => {
+  ctx.body = await userController.login(ctx, next)
+})
+
+// 登出
+router.get('logout', async (ctx, next) => {
+  ctx.body = await userController.logout(ctx, next)
 })
 
 module.exports = router
